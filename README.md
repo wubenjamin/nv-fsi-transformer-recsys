@@ -1,33 +1,37 @@
 # NVIDIA FSI Transformer RecSys Demo
 
-This repository contains demonstration notebooks showcasing the use of [NVIDIA Merlin Transformers4Rec](https://github.com/NVIDIA-Merlin/Transformers4Rec/) for building sequential and session-based recommendation systems using transformer architectures.
+This repository contains demonstration notebooks showcasing the use of [NVIDIA Merlin Transformers4Rec](https://github.com/NVIDIA-Merlin/Transformers4Rec/) for building sequential and session-based recommendation systems using transformer architectures, specifically adapted for **Financial Services Industry (FSI)** use cases.
 
 ## Overview
 
-Transformers4Rec is a flexible and efficient library for sequential and session-based recommendation that works with PyTorch. This demo repository demonstrates how to leverage GPU-accelerated preprocessing with NVTabular and transformer models for recommendation tasks in the financial services industry (FSI).
+Transformers4Rec is a flexible and efficient library for sequential and session-based recommendation that works with PyTorch. This demo repository demonstrates how to leverage GPU-accelerated preprocessing with NVTabular and transformer models for **financial product recommendation** and **loan customer journey modeling** in the financial services industry.
 
 ## Notebooks
 
-### 1. ETL with NVTabular (`01-ETL-with-NVTabular.ipynb`)
+### 1. FSI Loan Data ETL with NVTabular (`01-FSI-Loan-Data-ETL-with-NVTabular.ipynb`)
 This notebook demonstrates:
-- Data preprocessing and feature engineering using NVTabular
-- GPU-accelerated data transformations for recommendation datasets
-- Schema creation and feature preparation for transformer models
-- Integration with the Merlin ecosystem for efficient data pipelines
+- **FSI-specific data preprocessing**: Loading and processing synthetic loan interaction data
+- **Financial feature engineering**: Creating product interaction sequences, customer financial profiles, and eligibility features
+- **GPU-accelerated transformations**: Optimized preprocessing for financial datasets using NVTabular
+- **Schema creation for FSI data**: Feature preparation specifically designed for loan customer journeys
+- **Integration with financial data**: Support for FICO scores, income data, loan details, and marketing touchpoints
 
-### 2. Session-based XLNet with PyTorch (`02-session-based-XLNet-with-PyT.ipynb`)
+### 2. FSI Financial Product Recommendation with XLNet (`02-FSI-Financial-Product-Recommendation-XLNet.ipynb`)
 This notebook demonstrates:
-- Building session-based recommendation models using XLNet transformer architecture
-- Training and evaluation of sequential recommendation models
-- Next-item prediction tasks using Transformers4Rec
-- Performance optimization techniques for transformer-based RecSys
+- **Transformer Integration**: Seamless integration with Hugging Face Transformers for RecSys tasks
+- **Financial product recommendation**: Building recommendation models for financial services using transformers
+- **Loan customer journey modeling**: Sequential modeling of customer interactions with financial products and services
+- **Next-product prediction**: Predicting the next financial product or service a customer is likely to engage with
+- **FSI-specific evaluation metrics**: Tailored evaluation approach for financial recommendation systems
+- **Performance optimization**: Techniques optimized for financial product vocabularies and customer sequences
 
 ## Key Features
 
+- **FSI Domain Adaptation**: Specifically adapted for Financial Services Industry use cases
 - **GPU-Accelerated Pipeline**: Leverages NVIDIA Merlin components for end-to-end GPU acceleration
-- **Transformer Integration**: Seamless integration with Hugging Face Transformers for RecSys tasks
-- **Rich Feature Support**: Support for multiple input features beyond simple token sequences
-- **Session-based Recommendation**: Specialized for sequential and session-based recommendation scenarios
+- **Financial Product Focus**: Specialized for loan products, financial services, and customer journey modeling
+- **Rich Financial Features**: Support for FICO scores, income data, loan characteristics, eligibility criteria, and marketing interactions
+- **Customer Journey Analytics**: Session-based modeling of how customers interact with financial products over time
 
 ## Requirements
 
@@ -67,8 +71,16 @@ docker run --gpus all -it -p 8888:8888 nvcr.io/nvidia/merlin/merlin-pytorch:23.0
 1. Clone this repository
 2. Install the required dependencies
 3. Launch Jupyter Lab/Notebook
-4. Start with `01-ETL-with-NVTabular.ipynb` for data preprocessing
-5. Continue with `02-session-based-XLNet-with-PyT.ipynb` for model training
+4. Start with `01-FSI-Loan-Data-ETL-with-NVTabular.ipynb` for FSI data preprocessing and feature engineering
+5. Continue with `02-FSI-Financial-Product-Recommendation-XLNet.ipynb` for financial product recommendation model training
+
+## FSI Use Case Details
+
+This demo specifically models:
+- **Loan Customer Journeys**: Sequential interactions of customers with loan products and services
+- **Financial Product Recommendations**: Predicting which financial products customers are likely to engage with next
+- **Customer Segmentation**: Using financial profiles (FICO, income, loan details) for personalized recommendations
+- **Marketing Optimization**: Incorporating marketing touchpoint data (email, direct mail) into recommendation logic
 
 ## About NVIDIA Merlin
 
